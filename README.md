@@ -8,7 +8,7 @@ git clone https://github.com/omer-os/quick_start_to_react_project_with_python.gi
 ```
 
 so whenever you want to create a new react project just go to the MYProjects directory which created on you pc 
-and just write this on your termminal 
+and just write this on your termminal in MYProjects directory
 ```
 python start.py
 ```
