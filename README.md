@@ -34,3 +34,5 @@ if you dont have react install it by pasting this on your termminal
 ```
 npm i create-react-app
 ```
+if you have any issue or didnt understand how to set it up just write an issue in github
+IF YOU WANT TO HELP ME IMPROVE THIS PROJECT MAKE A PULL REQUEST .
