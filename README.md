@@ -1,4 +1,4 @@
-###we all hate starting react peoject right ?
+##we all hate starting react peoject right ?
 ##if you tired from react project setup or you even dont know to to setup a react project, well this python project is for you
 
 How to install it ? just paste these commands ito your termminal !
