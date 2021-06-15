@@ -1,19 +1,26 @@
 import os
 import colorful as cf
+import time
 
+
+os.system('cls')
 name = input(cf.green('\n\nenter the name of your project : '))
 
-os.system(f'cls && npx create-react-app {name}')
+try:
+  os.system(f'cls && npx create-react-app {name}')
+except:
+  print(cf.red(f'Cannot create a project named "{name}" because of npm naming restrictions'))
+  time.sleep(2)
+  # os.execl(sys.executable, sys.executable, *sys.argv)
 
-os.system(f'cd ./{name}')
-os.system('README.md')
-os.system('rmdir src /s')
-os.system('mkdir src')
-os.system('rmdir public /s')
-os.system('mkdir public && cd public')
+os.chdir(name)
 
-code_for_html = """
-<!DOCTYPE html>
+
+os.system('cls && del README.md && rmdir src /s /Q && mkdir src && rmdir public /s /Q && mkdir public')
+os.chdir('public')
+
+
+code_for_html = """<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -23,12 +30,17 @@ code_for_html = """
   <body>
     <div id="root"></div>
   </body>
-</html>
-"""
+</html>"""
+with open('index.html', 'w') as html:
+    html.write(code_for_html)
+    html.close()
+
+os.chdir('../src')
 
 
-code_for_app = """
-import './App.css';
+
+
+code_for_app = """import './App.css';
 
 function App() {
   return (
@@ -37,11 +49,9 @@ function App() {
   );
 }
 
-export default App;
-"""
+export default App;"""
 
-code_for_index = """
-import React from 'react';
+code_for_index = """import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
 
@@ -50,23 +60,25 @@ ReactDOM.render(
     <App />
   </React.StrictMode>,
   document.getElementById('root')
-);
-"""
-
-with open('index.html') as html:
-    html.write(code_for_html)
-    html.close()
+);"""
 
 
-os.system('cd..')
 
-os.system('cd src')
-with open('index.js') as index:
-    index.write(code_for_index)
-    index.close()
-with open('App.jsx') as App:
+
+with open('index.js', 'w') as indexjs:
+    indexjs.write(code_for_index)
+    indexjs.close()
+
+with open('App.jsx', 'w') as App:
     App.write(code_for_app)
     App.close()
 
+with open('App.css', 'w') as css:
+    css.write('')
+    css.close()
 
+
+
+os.chdir('..')
 os.system('code .')
+os.system('npm start')
