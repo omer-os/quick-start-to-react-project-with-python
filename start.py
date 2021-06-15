@@ -1,15 +1,14 @@
 import os
-import colorful as cf
 import time
 
 
 os.system('cls')
-name = input(cf.green('\n\nenter the name of your project : '))
+name = input('\n\nenter the name of your project : ')
 
 try:
   os.system(f'cls && npx create-react-app {name}')
 except:
-  print(cf.red(f'Cannot create a project named "{name}" because of npm naming restrictions'))
+  print(f'Cannot create a project named "{name}" because of npm naming restrictions')
   time.sleep(2)
   # os.execl(sys.executable, sys.executable, *sys.argv)
 
