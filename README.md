@@ -38,4 +38,4 @@ if you have any issue or didnt understand how to set it up just write an issue i
 IF YOU WANT TO HELP ME IMPROVE THIS PROJECT MAKE A PULL REQUEST .
 
 
-Description : create a new react project with python
+
